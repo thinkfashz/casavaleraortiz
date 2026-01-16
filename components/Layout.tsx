@@ -45,19 +45,21 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             {/* Navbar - Glassmorphism optimizado */}
             <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled || mobileMenuOpen ? 'bg-black/80 backdrop-blur-xl border-b border-white/5 py-3' : 'bg-transparent py-4 md:py-6'}`}>
                 <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-                    <Link to="/" className="z-50 flex items-center gap-3 group relative">
-                        {/* Logo Imagen con manejo de fondo blanco */}
-                        <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-xl overflow-hidden shadow-lg shadow-white/5 ring-1 ring-white/10 group-hover:scale-105 transition-transform duration-300">
+                    <Link to="/" className="z-50 flex items-center gap-3 group relative select-none">
+                        {/* Logo Imagen con manejo de fondo blanco y efectos premium */}
+                        <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-xl overflow-hidden shadow-lg shadow-white/5 ring-1 ring-white/10 bg-white flex items-center justify-center group-hover:scale-105 group-hover:ring-2 group-hover:ring-primary/50 transition-all duration-300 ease-out">
                              <img 
                                 src={logoUrl} 
                                 alt="Valera Ortiz Logo" 
-                                className="w-full h-full object-cover" 
+                                className="w-full h-full object-contain p-0.5" 
                             />
+                            {/* Overlay de brillo sutil */}
+                            <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                         </div>
                         
                         <div className="flex flex-col">
-                            <span className="font-display font-bold text-lg md:text-xl tracking-tight leading-none text-white uppercase drop-shadow-md">Valera Ortiz</span>
-                            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Construcción Premium</span>
+                            <span className="font-display font-bold text-lg md:text-xl tracking-tight leading-none text-white uppercase drop-shadow-md group-hover:text-gray-200 transition-colors">Valera Ortiz</span>
+                            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-primary font-bold group-hover:text-red-400 transition-colors">Construcción Premium</span>
                         </div>
                     </Link>
 
